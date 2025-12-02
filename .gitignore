@@ -1,0 +1,24 @@
+# Build artifacts
+build/
+bin/
+*.o
+*.mod
+
+# Output files
+frame_*.csv
+*.dat
+*.out
+
+# Test results
+test_results/
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
