@@ -1,7 +1,7 @@
 program main
   use types_mod
   use potential_interface_mod
-  use fmm_2d_simple_mod
+  use fmm_grid_optimized_mod
   use md_mod
   implicit none
 
@@ -87,7 +87,7 @@ program main
 
     ! FMM computation
     call cpu_time(t0f)
-    call fmm_2d_compute(N, xs, ys, zs, qs, p_order, ngrid, phi, fx, fy, fz)
+    call fmm_grid_compute(N, xs, ys, zs, qs, p_order, ngrid, phi, fx, fy, fz)
     call cpu_time(t1f)
     t_fmm = t1f - t0f
     print '(A,F10.6,A)', "  FMM time: ", t_fmm, " s"

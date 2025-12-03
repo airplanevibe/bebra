@@ -24,7 +24,7 @@ BIN_DIR = bin
 # Source files (order matters for dependencies)
 SOURCES = $(SRC_DIR)/types_mod.f90 \
           $(SRC_DIR)/potential_interface_mod.f90 \
-          $(SRC_DIR)/fmm_2d_simple_mod.f90 \
+          $(SRC_DIR)/fmm_grid_optimized_mod.f90 \
           $(SRC_DIR)/md_mod.f90 \
           $(SRC_DIR)/main.f90
 
@@ -55,11 +55,11 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.f90
 
 # Dependencies (module dependencies)
 $(BUILD_DIR)/potential_interface_mod.o: $(BUILD_DIR)/types_mod.o
-$(BUILD_DIR)/fmm_2d_simple_mod.o: $(BUILD_DIR)/types_mod.o
+$(BUILD_DIR)/fmm_grid_optimized_mod.o: $(BUILD_DIR)/types_mod.o
 $(BUILD_DIR)/md_mod.o: $(BUILD_DIR)/types_mod.o
 $(BUILD_DIR)/main.o: $(BUILD_DIR)/types_mod.o \
                      $(BUILD_DIR)/potential_interface_mod.o \
-                     $(BUILD_DIR)/fmm_2d_simple_mod.o \
+                     $(BUILD_DIR)/fmm_grid_optimized_mod.o \
                      $(BUILD_DIR)/md_mod.o
 
 # Debug build
